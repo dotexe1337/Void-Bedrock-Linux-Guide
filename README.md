@@ -34,26 +34,33 @@
 - Step 3: Update the package manager: sudo xbps-install -Syu
 - Step 4: Update the rest of the system: sudo xbps-install -Syu
 - Step 5: Reboot the system (sudo reboot) and log back in once it reboots.
-- Step 6: Install packages: sudo xbps-install xorg xfce4 firefox thunderbird hexchat vlc qbittorrent qt5ct kvantum arc-theme papirus-icon-theme NetworkManager network-manager-applet pa-applet pavucontrol noto-fonts noto-fonts-cjk && sudo xbps-remove -F parole
-- Step 7: Edit ~/.xinitrc:
+- Step 6: Install the aditional repositories: sudo xbps-install void-repo-multilib void-repo-nonfree void-repo-multilib-nonfree
+- Step 7: Install packages: sudo xbps-install -S vim xorg xfce4 firefox thunderbird hexchat vlc qbittorrent qt5ct kvantum arc-theme papirus-icon-theme NetworkManager network-manager-applet pa-applet pulseaudio pavucontrol noto-fonts-ttf noto-fonts-cjk noto-fonts-emoji && sudo xbps-remove -F parole
+- Step 8: Edit ~/.xinitrc:
 ```
 Xrdb ~/.Xresources
 
 exec xfce4-session
 ```
-- Step 8: Configure network manager:
+- Step 9: Configure network manager:
 ```
 sudo ln -s /etc/sv/NetworkManager /var/service/
 sudo ln -s /etc/sv/dbus /var/service/
 sudo rm -rf /var/service/dhcpcd
 ```
-- Step 9: Type "startx" to enter the graphical environment.
-- Step 10: Configure XFCE4 to your liking.
-- Step 11: Open the Kvantum Manager and set the theme to Arc-Dark.
-- Step 12: Open qt5ct and set the theme to Kvantum-Dark Set the icon theme to Papirus-Dark.. Set the general font to Noto Sans Regular 10 and set the fixed width font to Noto Sans Mono 10.
-- Step 13: Open appearance settings and set the font to Noto Sans Regular, the monospace font to Noto Sans Mono Regular, the theme to Arc-Dark, and the icon theme to Papirus-Dark.
-- Step 14: Open the window manager settings and set the theme to Arc-Dark, and the title font to Noto Sans Bold
-- Step 15: Open the session & startup settings and set nm-applet (NetworkManager Applet) and pa-applet (PulseAudio applet) to load on startup.
+- Step 10: Type "startx" to enter the graphical environment.
+- Step 11: Configure XFCE4 to your liking.
+- Step 12: Open the Kvantum Manager and set the theme to Arc-Dark.
+- Step 13: Open qt5ct and set the theme to Kvantum-Dark Set the icon theme to Papirus-Dark.. Set the general font to Noto Sans Regular 10 and set the fixed width font to Noto Sans Mono 10.
+- Step 14: Open appearance settings and set the font to Noto Sans Regular, the monospace font to Noto Sans Mono Regular, the theme to Arc-Dark, and the icon theme to Papirus-Dark.
+- Step 15: Open the window manager settings and set the theme to Arc-Dark, and the title font to Noto Sans Bold
+- Step 16 (Optional): Disable XFCE4's session saving. Type "xfconf-query -c xfce4-session -p /general/SaveOnExit -n -t bool -s false" (without quotations) into the terminal, then open session & startup settings, go to the session tab and hit "clear saved sessions".
 
 # Installing Bedrock Linux
-- To be continued.
+- Step 1: Download the Bedrock Linux installer for your architecture: https://raw.githubusercontent.com/bedrocklinux/bedrocklinux-userland/0.7/releases
+- Step 2: Run the Bedrock Linux installer. sudo sh ./bedrock-linux-release-arch.sh --hijack
+- Step 3: Wait for it to install and then reboot: sudo reboot
+- Step 4 (Optional): Edit the Grub config to report Bedrock Linux in the bootloader instead of Void Linux: Edit /etc/default/grub with vim, change "Void" to "Bedrock" under "GRUB_DISTRIBUTOR", then save and quit. Run "sudo grub-mkconfig -o /boot/grub/grub.cfg" to write the changes to the config.
+- Step 5: Install your desired distributions into Bedrock. You can see a list of potential distributions by typing "brl fetch --list" into terminal. You can install a distribution by typing "brl fetch <distro_name>" into terminal.
+
+At this point, you should be done. You should have a fully functioning Bedrock Linux system running with Void Linux as the base. I hope this guide was helpful to you. Enjoy your Bedrock Linux system!
