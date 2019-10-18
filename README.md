@@ -32,7 +32,7 @@ This document is licensed under the GNU Free Documentation License (FDL) v1.3. F
 
 # Setting up the base Void Linux system
 - Step 1: Log into Void Linux. You should use the credentials that you created earlier. (Example: username - michael, password - mypassword)
-- Step 2 (Optional): Edit /etc/sudoers to remove the password prompt when using sudo. Type "sudo vi /etc/sudoers", hit I to enter edit mode, remove the line "%wheel ALL=(ALL) ALL" and the comment above it, and replace it with "username ALL=(ALL) NOPASSWD: ALL" (example: "michael ALL=(ALL) NOPASSWD: ALL"), then hit Esc to exit edit mode, type :w! to save and :q to edit.
+- Step 2 (Optional): Edit /etc/sudoers to remove the password prompt when using sudo. Type `sudo vi /etc/sudoers`, hit I to enter edit mode, and change the line `%wheel ALL=(ALL) ALL` to `%wheel ALL=(ALL) NOPASSWD: ALL`, then hit Esc to exit edit mode, type :w! to save and :q to edit.
 - Step 3: Update the package manager: sudo xbps-install -Syu
 - Step 4: Update the rest of the system: sudo xbps-install -Syu
 - Step 5: Reboot the system (sudo reboot) and log back in once it reboots.
