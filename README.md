@@ -1,4 +1,6 @@
 # Void/Bedrock Linux Guide
+This document is licensed under the GNU Free Documentation License (FDL) v1.3. For more information, please read LICENSE.md
+
 - This is a guide for a complete Bedrock Linux system using Void Linux as the base distribution. This guide assumes that you are using the minimal Void Linux LiveCD (with no Desktop Environments preinstalled).
 
 - I am not responsible for your computer catching fire, you getting fired from your job because the spreadsheet you just saved got corrupted, or the beginnings of thermonuclear war. Do this at your own risk.
