@@ -53,7 +53,7 @@ sudo rm -rf /var/service/dhcpcd
 - Step 10: Type "startx" to enter the graphical environment.
 - Step 11: Configure XFCE4 to your liking.
 - Step 12: Open the Kvantum Manager and set the theme to Arc-Dark.
-- Step 13: Open qt5ct and set the theme to Kvantum-Dark Set the icon theme to Papirus-Dark.. Set the general font to Noto Sans Regular 10 and set the fixed width font to Noto Sans Mono 10.
+- Step 13: Open qt5ct and set the theme to Kvantum-Dark. Set the icon theme to Papirus-Dark. Set the general font to Noto Sans Regular 10 and set the fixed width font to Noto Sans Mono 10.
 - Step 14: Open appearance settings and set the font to Noto Sans Regular, the monospace font to Noto Sans Mono Regular, the theme to Arc-Dark, and the icon theme to Papirus-Dark.
 - Step 15: Open the window manager settings and set the theme to Arc-Dark, and the title font to Noto Sans Bold
 - Step 16 (Optional): Disable XFCE4's session saving. Type "xfconf-query -c xfce4-session -p /general/SaveOnExit -n -t bool -s false" (without quotations) into the terminal, then open session & startup settings, go to the session tab and hit "clear saved sessions".
